@@ -1,0 +1,82 @@
+/* .CharacterList {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px;
+
+  margin: 25px 12px;
+}
+
+.CharacterCard {
+  position: relative;
+  height: 200px;
+  background-position: center;
+  background-size: auto 100%;
+} */
+
+.CharacterList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+  margin: 25px 12px;
+}
+
+.CharacterCard {
+  position: relative;
+  width: 171px;
+  height: 200px;
+  background-position: center;
+  background-size: auto 100%;
+  background-color: #dadada;
+}
+
+.CharacterExcludeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 1);
+  border: none;
+  outline: none;
+}
+
+.CharacterCard:hover,
+.CharacterExcludeButton:hover {
+  cursor: pointer;
+}
+
+.SlotName {
+  bottom: 30px;
+  position: absolute;
+  width: 171px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.FetchMoreButton {
+  outline: none;
+  background: white;
+  width: 200px;
+  padding: 10px 20px;
+  text-align: center;
+  margin: auto;
+  border: 1px solid #a0a0a0;
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.FetchMoreButton:active {
+  border: 1px solid #dadada;
+}

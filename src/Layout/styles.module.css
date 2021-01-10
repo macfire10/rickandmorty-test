@@ -1,0 +1,14 @@
+.Layout {
+  display: grid;
+  margin: auto;
+  align-items: center;
+  max-width: 768px;
+
+  padding-top: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .Layout {
+    padding-top: 12px;
+  }
+}

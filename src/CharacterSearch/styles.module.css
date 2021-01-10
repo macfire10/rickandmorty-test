@@ -1,0 +1,16 @@
+.SearchFieldContainer {
+  position: relative;
+  height: 50px;
+  margin: 0 12px;
+}
+
+.SearchField {
+  height: 100%;
+  width: 100%;
+  padding: 0 12px;
+  border: 1px solid #a0a0a0;
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 24px;
+  box-sizing: border-box;
+}
