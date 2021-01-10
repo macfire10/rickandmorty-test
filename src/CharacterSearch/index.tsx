@@ -31,10 +31,10 @@ export const CharacterSearch: React.FC = () => {
   });
 
   /**
-   * debounce it so it triggers only once every 300ms
-   *
-   *
+   * debounce it so it triggers only once every 300ms,
+   * supress a eslint warning since we are sure deps are consistent
    * */
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const loadSearchCharacters = useCallback(
     debounce((name: string) => {
       /** should not be called for name lengths less then 2 */
