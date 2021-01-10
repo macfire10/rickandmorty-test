@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import debounce from "lodash/debounce";
 
 import { useSearchCharactersLazyQuery } from "../graphql";
-import {
-  maxPage, searchedCharacters,
-} from "../core/client";
+import { maxPage, searchedCharacters } from "../core/client";
 
 import { SearchField } from "./SearchField";
 import { useReactiveVar } from "@apollo/client";
@@ -18,7 +16,7 @@ import { eraseCharacterSearchFieldQueryCache } from "./utils";
  */
 export const CharacterSearch: React.FC = () => {
   const page = useReactiveVar(maxPage);
-  const [characterName, setCharacterName] = useState('');
+  const [characterName, setCharacterName] = useState("");
 
   const [
     loadCharactersLazyQuery,
@@ -37,23 +35,26 @@ export const CharacterSearch: React.FC = () => {
    *
    *
    * */
-  const loadSearchCharacters = debounce((name: string) => {
-    /** should not be called for name lengths less then 2 */
-    if (name.length < 3) {
-      client && eraseCharacterSearchFieldQueryCache(client);
+  const loadSearchCharacters = useCallback(
+    debounce((name: string) => {
+      /** should not be called for name lengths less then 2 */
+      if (name.length < 3) {
+        client && eraseCharacterSearchFieldQueryCache(client);
 
-      return;
-    }
+        return;
+      }
 
-    loadCharactersLazyQuery({
-      variables: {
-        page: 1,
-        filter: {
-          name,
+      loadCharactersLazyQuery({
+        variables: {
+          page: 1,
+          filter: {
+            name,
+          },
         },
-      },
-    });
-  }, 300);
+      });
+    }, 300),
+    []
+  );
 
   useEffect(() => {
     searchedCharacters(data);
