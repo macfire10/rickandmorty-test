@@ -1,23 +1,6 @@
-/* .CharacterList {
-  display: grid;
-  align-items: center;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 25px;
-
-  margin: 25px 12px;
-}
-
-.CharacterCard {
-  position: relative;
-  height: 200px;
-  background-position: center;
-  background-size: auto 100%;
-} */
-
 .CharacterList {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
 
   margin: 25px 12px;
@@ -30,6 +13,7 @@
   background-position: center;
   background-size: auto 100%;
   background-color: #dadada;
+  margin: 5px;
 }
 
 .CharacterExcludeButton {
